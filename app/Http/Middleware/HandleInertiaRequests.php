@@ -8,12 +8,12 @@ use Inertia\Middleware;
 class HandleInertiaRequests extends Middleware
 {
     /**
-     * View principal que será carregada na primeira visita.
+     * The root template loaded on the first page visit.
      */
     protected $rootView = 'app';
 
     /**
-     * Controla a versão dos arquivos frontend.
+     * Determine the current asset version.
      */
     public function version(Request $request): ?string
     {
@@ -21,7 +21,7 @@ class HandleInertiaRequests extends Middleware
     }
 
     /**
-     * Dados compartilhados com todas as páginas React.
+     * Share data with every Inertia page.
      */
     public function share(Request $request): array
     {
