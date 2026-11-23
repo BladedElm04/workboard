@@ -48,8 +48,9 @@ services:
   node:
     image: node:22-alpine
     container_name: workboard_node
-    working_dir: /var/www/html
     restart: unless-stopped
+    user: "1000:1000"
+    working_dir: /var/www/html
     volumes:
       - ./:/var/www/html
       - workboard_node_modules:/var/www/html/node_modules
